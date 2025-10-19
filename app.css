@@ -661,3 +661,68 @@ p {
     margin-bottom: 1em;
     color: #e0e0e0;
 }
+
+/* === Responsive nav + footer fixes === */
+
+/* Nav wrap for smaller screens */
+@media (max-width: 768px) {
+    .header-grid nav ul {
+        grid-auto-flow: row;
+        justify-items: center;
+        gap: 12px;
+    }
+
+    .header-grid nav {
+        justify-self: center;
+        align-self: center;
+        background: none;
+        padding: 0;
+    }
+}
+
+/* Footer responsive stacking */
+@media (max-width: 900px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .footer-brand,
+    .footer-nav,
+    .footer-cta {
+        justify-self: center;
+    }
+
+    .footer-nav ul {
+        display: inline-grid;
+        gap: 6px;
+    }
+}
+
+/* === Responsive, fluid typography === */
+
+html {
+    font-size: 100%;
+}
+
+body {
+    font-size: clamp(1rem, 1.6vw, 1.25rem);
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: clamp(2rem, 6vw, 3.25rem);
+    line-height: 1.1;
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4.5vw, 2.25rem);
+}
+
+h3 {
+    font-size: clamp(1.25rem, 3.5vw, 1.75rem);
+}
+
+p {
+    font-size: clamp(0.95rem, 1.3vw, 1.125rem);
+}
